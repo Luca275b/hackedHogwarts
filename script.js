@@ -206,10 +206,7 @@ function showStudents(students) {
 
     function clickExpelled() {
       console.log("clickExpelled");
-      if (student.firstName === "Sophie") {
-        student.expelled === false;
-        canNotExpell();
-      } else if (student.expelled === false) {
+      if (student.expelled === false) {
         student.expelled = true;
         console.log("den studerende bliver expelled");
       }
