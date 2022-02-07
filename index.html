@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hogwarts student list</title>
+</head>
+<body>
+    <section id="header">
+        <h1 id="h1" class="header">Hogwart Student List</h1>
+    </section>
+
+    <section id="change_list">
+        <div id="filter_and_sort">
+            <div id="filter">
+                <label for="filter" class="setting_btns">Filter by</label>
+                <div class="dropdown">
+                    <button class="filter" data-action="filter" data-filter="all">All students</button>
+                    <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+                    <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+                    <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+                    <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+                    <button class="filter" data-action="filter" data-filter="squad">Inquisitorial Squad</button>
+                    <button class="filter" data-action="filter" data-filter="prefects">Prefects</button>
+                    <button class="filter" data-action="filter" data-filter="expelled">Expelled students</button>
+                </div>
+            </div> 
+
+            <div id="sort">
+                <label for="sort" class="setting_btns">Sort by</label>
+                <div class="dropdown">
+                    <button data-action="sort" data-sort-direction="asc" data-sort="firstName">First name</button>
+                    <button data-action="sort" data-sort-direction="asc" data-sort="lastName">Last name</button>
+                    <button data-action="sort" data-sort-direction="asc" data-sort="house">House</button>
+                </div>
+            </div>
+        </div>
+        <div id="search">
+            <input type="text" id="site-search" placeholder="Find a student">
+        </div>
+
+        <div id="student_nums">
+            <p id="students-num"></p>
+            <p id="gryf-num"></p>
+            <p id="huf-num"></p>
+            <p id="rav-num"></p>
+            <p id="sly-num"></p>
+        </div>
+
+    </section>
+
+    <section id="student_list">
+    </section>
+
+    <div id="popup"></div>
+
+    <div id="remove_other" class="modal hide">
+        <div class="dialog">
+          <button class="close">X</button>
+          <h2>Sorry!</h2>
+          <p></p>
+            <div class="sidebyside">
+              <button id="removeOther">Remove <span data-field="prefectsOther">Other</span></button>
+            </div>
+        </div>
+      </div>
+
+      <div id="noSquad" class="modal hide">
+        <div class="dialog">
+            <button class="close">X</button>
+            <h2>Warning!</h2>
+            <p>The Student needs to be from Slytherin and a pure-blood.</p>
+        </div>
+      </div>
+
+<footer>
+    <p>Hacked Hogwarts</p>
+</footer>
+
+    <!-- Template for the students -->
+    <template class="student">
+        <article class="studentcard">
+            <img class="student_image" src="" alt="">
+            <p class="student_name"></p>
+            <p class="house"></p>
+            <button class="read_more">More</button>
+            <div class="action_buttons">
+                <button data-field="expelled" data-prefects="false" class="expelled" >X</button>
+                <button data-field="prefects" data-prefects="false" class="prefects"><img class="icon_btns" src="images/file.png" alt="prefects"></button>
+                <button data-field="squad" class="squad"><img class="icon_btns" src="images/user.png" alt="squad"></button>
+            </div>
+        </article>
+    </template>
+
+    <template class="about">
+        <article class="about_student">
+            <div id="crest">
+                <img class="crest" src="" alt="crest">
+            </div>
+            <button class="close">X</button>
+            <div class="names">
+                <p class="fullname"></p>
+                <p class="nickname"></p>
+            </div>
+            <div class="studentinfo">
+                <img class="student_image" src="" alt="">
+            <div class="details">
+                <p class="house"></p>
+                <p class="gender"></p>
+                <p class="blood"></p>
+                <p class="prefects_or_not"></p>
+                <p class="squad_or_not"></p>
+                <p class="expelled_or_not"></p>
+            </div>
+            </div>
+        </article>
+    </template>
+   
+    <script src="script.js"></script>
+</body>
+</html>
